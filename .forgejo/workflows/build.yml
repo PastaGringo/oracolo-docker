@@ -3,7 +3,7 @@ run-name: ${{ gitea.actor }} is runs ci pipeline
 on: [ push ]
 
 jobs:
-  build-push-oracolo:
+  build-push:
     runs-on: ubuntu-22.04
     steps:
       - 
