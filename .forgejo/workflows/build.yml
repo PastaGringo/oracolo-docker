@@ -4,8 +4,11 @@ on: [ push ]
 
 jobs:
   build-push-oracolo:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
