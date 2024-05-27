@@ -6,6 +6,9 @@ jobs:
   build:
     runs-on: docker
     steps:
+      - 
+        name: Install Docker
+        run: curl -fsSL https://get.docker.com | sh
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
