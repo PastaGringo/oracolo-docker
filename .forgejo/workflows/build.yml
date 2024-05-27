@@ -4,7 +4,7 @@ on: [ push ]
 
 jobs:
   build-push-docker:
-    runs-on: ubuntu-22.04
+    runs-on: docker
     steps:
       - 
         name: Install Docker
