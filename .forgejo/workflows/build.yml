@@ -10,8 +10,8 @@ jobs:
         name: Install Docker
         run: curl -fsSL https://get.docker.com | sh
       -
-        name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        name: Build Dockerfile
+        run: docker build -t pastagringo/oracolo-docker .
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
