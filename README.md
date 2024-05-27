@@ -2,6 +2,8 @@
 
 You need to use your own web proxy to access the container with HTTPS.
 
+Mirror from [https://git.fractalized.net/PastaGringo/oracolo-docker](https://git.fractalized.net/PastaGringo/oracolo-docker)
+
 ## Use with docker-compose:
 
 ```
@@ -21,4 +23,4 @@ services:
     #   - 8080:8080
 ```
 
-Live demo: [oracolo.fractalized.net](oracolo.fractalized.net/)
+Live demo: [oracolo.fractalized.net](https://oracolo.fractalized.net)
