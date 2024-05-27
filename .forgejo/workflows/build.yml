@@ -5,6 +5,7 @@ on: [ push ]
 jobs:
   build-push-docker:
     runs-on: docker
+    container: docker:latest
     steps:
       -
         name: Set up Docker Buildx
