@@ -8,6 +8,8 @@ jobs:
     container: docker:latest
     steps:
       -
+        uses: https://github.com/actions/checkout@v4
+      -
         name: Use Node.js
         uses: https://github.com/actions/setup-node@v3
         with:
