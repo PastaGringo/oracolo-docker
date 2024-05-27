@@ -5,7 +5,7 @@ on: [ push ]
 jobs:
   build-push-oracolo:
     runs-on: docker
-    container: ubuntu:latest
+    container: docker
     steps:
       -
         name: Set up Docker Buildx
