@@ -8,7 +8,7 @@ jobs:
     steps:
       - 
         name: Install Docker
-        run: curl -fsSL https://get.docker.com | sh
+        run: curl -fsSL https://get.docker.com | sh && dockerd-rootless-setuptool.sh install
       -
         name: Build Dockerfile
         run: docker build -t pastagringo/oracolo-docker .
