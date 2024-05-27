@@ -5,6 +5,7 @@ on: [ push ]
 jobs:
   build:
     runs-on: docker
+    container: ghcr.io/catthehacker/ubuntu:act-latest
     steps:
       - 
         name: Install Docker
