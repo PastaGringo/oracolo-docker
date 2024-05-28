@@ -4,9 +4,9 @@ on: [ push ]
 
 jobs:
   build-push-docker-image:
-    runs-on: docker
+    runs-on: docker-dood
     #container: docker:latest
-    container: catthehacker/ubuntu:act-latest
+    #container: catthehacker/ubuntu:act-latest
     steps:
       - 
         uses: https://github.com/actions/hello-world-docker-action@main
