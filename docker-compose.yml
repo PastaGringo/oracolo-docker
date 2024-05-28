@@ -45,7 +45,7 @@ services:
     environment:
       - NPUB=${NPUB}
       - RELAYS=${RELAYS}
-      - TOP_NOTES_NB=${TOP_NOTES}
+      - TOP_NOTES_NB=${TOP_NOTES_NB}
     # ports:
     #   - 8080:8080
     labels:
