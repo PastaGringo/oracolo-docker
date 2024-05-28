@@ -8,6 +8,10 @@ jobs:
     #container: docker:latest
     container: catthehacker/ubuntu:act-latest
     steps:
+      - 
+        uses: https://github.com/actions/hello-world-docker-action@main
+        with:
+          who-to-greet: 'Mona the Octocat'
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
