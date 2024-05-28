@@ -1,5 +1,7 @@
 # oracolo-docker
 
+Docker image built from commit: https://github.com/dtonon/oracolo/commit/c6d939aee55dcd7a04682af54647e268350a20f2
+
 You need to use your own web proxy to access the container with HTTPS.
 
 Mirror from [https://git.fractalized.net/PastaGringo/oracolo-docker](https://git.fractalized.net/PastaGringo/oracolo-docker)
