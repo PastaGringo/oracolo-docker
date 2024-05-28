@@ -3,7 +3,7 @@ run-name: ${{ gitea.actor }} is runs ci pipeline
 on: [ push ]
 
 jobs:
-  build-push-docker:
+  build-push-docker-image:
     runs-on: docker
     #container: docker:latest
     container: catthehacker/ubuntu:act-latest
