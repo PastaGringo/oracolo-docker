@@ -1,6 +1,12 @@
 #!/bin/sh
 echo
-echo "Starting oracolo..."
+echo "  ___   ____    ____    __   ___   _       ___  ";
+echo " /   \ |    \  /    |  /  ] /   \ | |     /   \ ";
+echo "|     ||  D  )|  o  | /  / |     || |    |     |";
+echo "|  O  ||    / |     |/  /  |  O  || |___ |  O  |";
+echo "|     ||    \ |  _  /   \_ |     ||     ||     |";
+echo "|     ||  .  \|  |  \     ||     ||     ||     |";
+echo " \___/ |__|\_||__|__|\____| \___/ |_____| \___/ ";
 echo
 echo "Oracolo dtonon's repo: https://github.com/dtonon/oracolo"
 src_index_html="/app/index.html"
