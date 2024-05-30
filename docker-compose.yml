@@ -1,6 +1,6 @@
 version: '3.8'
-services:  
-  
+services:
+
   traefik:
     image: "traefik:latest"
     container_name: "traefik"
@@ -39,13 +39,14 @@ services:
 
   oracolo:
     container_name: oracolo
-    image: pastagringo/oracolo-docker
-    #build:
-    #  context: .
+    # image: pastagringo/oracolo-docker
+    build:
+      context: .
     environment:
       - NPUB=${NPUB}
       - RELAYS=${RELAYS}
       - TOP_NOTES_NB=${TOP_NOTES_NB}
+      - SHORT_CHARS_NB=${SHORT_CHARS_NB}
     # ports:
     #   - 8080:8080
     labels:
@@ -56,3 +57,4 @@ services:
       - "traefik.http.routers.oracolo.tls.certresolver=selfhostedservices"
       - "traefik.http.middlewares.accesscontrol.headers.customResponseHeaders.access-control-allow-origin=*"
       - "traefik.http.routers.oracolo.middlewares=accesscontrol@docker"
+

@@ -7,61 +7,41 @@ echo "|  O  ||    / |     |/  /  |  O  || |___ |  O  |";
 echo "|     ||    \ |  _  /   \_ |     ||     ||     |";
 echo "|     ||  .  \|  |  \     ||     ||     ||     |";
 echo " \___/ |__|\_||__|__|\____| \___/ |_____| \___/ ";
-echo
+echo "                                                ";
 echo "Oracolo dtonon's repo: https://github.com/dtonon/oracolo"
-src_index_html="/app/index.html"
+echo "Docker image repo: https://github.com/PastaGringo/oracolo-docker"
 echo
-echo "╭────────────────────────────╮"
-echo "│ Docker Compose Env Vars ⤵️  │"
-echo "╰────────────────────────────╯"
+echo "╭───────────────────────╮"
+echo "│ Docker Env Vars... ⤵️  │"
+echo "╰───────────────────────╯"
 echo
-printf "%-15s : %s\n" "NPUB" "$NPUB"
-printf "%-15s : %s\n" "RELAYS" "$RELAYS"
-printf "%-15s : %s\n" "TOP_NOTES_NB" "$TOP_NOTES_NB"
+echo "> NPUB          : $NPUB"
+echo "> RELAYS        : $RELAYS"
+echo "> TOP_NOTES     : $TOP_NOTES_NB"
+echo "> SHORT_CHARS   : $SHORT_CHARS_NB"
 echo
 echo "╭───────────────────────────╮"
-echo "│ Configuring Oracolo... ⤵️  │"
+echo "│ Configuring Oracolo... ⏳ │"
 echo "╰───────────────────────────╯"
+src_index_html="/usr/share/nginx/html/index.html"
 echo
-echo -n "> Updating npub key with $NPUB... "
+echo -n "> Updating author npub key...  "
 sed -i "s/replace_with_your_npub/$NPUB/" $src_index_html
 echo "✅"
-echo -n "> Updating nostr relays with $RELAYS... "
+echo -n "> Updating nostr relays...     "
 old_relays="wss://nos.lol, wss://relay.damus.io, wss://nostr.wine"
 RELAYS=$(echo $RELAYS | sed 's/^"//' | sed 's/"$//')
 sed -i "s|$old_relays|$RELAYS|g" $src_index_html
 echo "✅"
-echo -n "> Updating TOP_NOTE with value $TOP_NOTES_NB... "
+echo -n "> Updating top-notes...        "
 old_TOP_NOTES='name="top-notes" value="0"'
 TOP_NOTES="name=\"top-notes\" value=\"$TOP_NOTES_NB\""
 sed -i "s|$old_TOP_NOTES|$TOP_NOTES|g" $src_index_html
 echo "✅"
-echo
-echo "╭───────────────────────╮"
-echo "│ Installing Oracolo ⤵️  │"
-echo "╰───────────────────────╯"
-npm install
-echo
-echo ">>> done ✅"
-echo
-echo "╭─────────────────────╮"
-echo "│ Building Oracolo ⤵️  │"
-echo "╰─────────────────────╯"
-npm run build
-echo
-echo ">>> done ✅"
-echo
-echo -n "> Copying Oracolo built index.html to nginx usr/share/nginx/html... "
-mkdir /usr/share/nginx/html
-cp /app/dist/index.html /usr/share/nginx/html
-echo "✅"
-echo
-echo "╭────────────────────────╮"
-echo "│ Configuring Nginx... ⤵️ │"
-echo "╰────────────────────────╯"
-echo
-echo -n "> Copying default nginx.conf file... "
-cp /app/nginx.conf /etc/nginx/http.d/oracolo.conf
+echo -n "> Updating short-chars...      "
+old_SHORT_CHARS='name="short-chars" value="0"'
+SHORT_CHARS="name=\"short-chars\" value=\"$SHORT_CHARS_NB\""
+sed -i "s|$old_SHORT_CHARS|$SHORT_CHARS|g" $src_index_html
 echo "✅"
 echo
 echo "╭──────────────────────╮"
