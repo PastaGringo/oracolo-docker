@@ -47,6 +47,8 @@ services:
       - RELAYS=${RELAYS}
       - TOP_NOTES_NB=${TOP_NOTES_NB}
       - SHORT_CHARS_NB=${SHORT_CHARS_NB}
+      - TOPICS=${TOPICS}
+      - COMMENTS_ENABLED=${COMMENTS_ENABLE}
     # ports:
     #   - 8080:8080
     labels:

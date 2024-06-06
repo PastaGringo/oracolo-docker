@@ -15,10 +15,12 @@ echo "╭───────────────────────�
 echo "│ Docker Env Vars... ⤵️  │"
 echo "╰───────────────────────╯"
 echo
-echo "> NPUB          : $NPUB"
-echo "> RELAYS        : $RELAYS"
-echo "> TOP_NOTES     : $TOP_NOTES_NB"
-echo "> SHORT_CHARS   : $SHORT_CHARS_NB"
+echo "> NPUB                : $NPUB"
+echo "> RELAYS              : $RELAYS"
+echo "> TOP_NOTES           : $TOP_NOTES_NB"
+echo "> SHORT_CHARS         : $SHORT_CHARS_NB"
+echo "> TOPICS              : $TOPICS"
+echo "> COMMENTS_ENABLED    : $COMMENTS_ENABLED"
 echo
 echo "╭───────────────────────────╮"
 echo "│ Configuring Oracolo... ⏳ │"
@@ -42,6 +44,16 @@ echo -n "> Updating short-chars...      "
 old_SHORT_CHARS='name="short-chars" value="0"'
 SHORT_CHARS="name=\"short-chars\" value=\"$SHORT_CHARS_NB\""
 sed -i "s|$old_SHORT_CHARS|$SHORT_CHARS|g" $src_index_html
+echo "✅"
+echo -n "> Updating topics...           "
+old_TOPICS='name="topics" value=""'
+TOPICS="name=\"topics\" value=\"$TOPICS\""
+sed -i "s|$old_TOPICS|$TOPICS|g" $src_index_html
+echo "✅"
+echo -n "> Updating comments...         "
+old_COMMENTS='name="comments" value="yes"'
+COMMENTS_ENABLED="name=\"comments\" value=\"$COMMENTS_ENABLED\""
+sed -i "s|$old_COMMENTS|$COMMENTS_ENABLED|g" $src_index_html
 echo "✅"
 echo
 echo "╭──────────────────────╮"
